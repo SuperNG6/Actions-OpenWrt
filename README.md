@@ -36,6 +36,7 @@ sed -i 's/KERNEL_TESTING_PATCHVER:=5.10/KERNEL_TESTING_PATCHVER:=4.19/g' ./targe
 
 # 调整编译选项
 make menuconfig
+# 勾选 Utilities--> acpid # 关机、重启支持
 
 # 下载软件包，本地做测试不需要进行以下步骤
 # 云编译直接下载`.config`上传即可
