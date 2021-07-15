@@ -11,3 +11,6 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.1.10/g' package/base-files/files/bin/config_generate
 
+# 修改内核为4.19
+sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
+sed -i 's/KERNEL_TESTING_PATCHVER:=5.10/KERNEL_TESTING_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
