@@ -20,7 +20,7 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: x86_64.config
@@ -64,7 +64,7 @@ jobs:
     - name: Cache
       uses: klever1988/cachewrtbuild@main
       with:
-        ccache: 'true'
+        ccache: 'false'
         prefix: ${{ github.workspace }}/openwrt
 
     - name: Load custom feeds
