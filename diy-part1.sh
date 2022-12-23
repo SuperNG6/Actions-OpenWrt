@@ -12,6 +12,7 @@
 # sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
 sed -i '$a src-git openclash https://github.com/vernesong/OpenClash' feeds.conf.default
 # sed -i '$a src-git istore https://github.com/linkease/istore' feeds.conf.default
+sed -i '$a src-git netgear https://github.com/ysoyipek/luci-theme-netgear.git' feeds.conf.default
 
 # 修改内核为4.19
 # sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=4.19/g' ./target/linux/x86/Makefile
