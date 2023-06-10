@@ -58,13 +58,15 @@ jobs:
         cd openwrt
         echo "src-git openclash https://github.com/vernesong/OpenClash.git" >> ./feeds.conf.default
         git clone https://github.com/gngpp/luci-theme-design.git  package/luci-theme-design
-        
+
         
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
+        sed -i 's/192.168.1.1/192.168.1.10/g' package/base-files/files/bin/config_generate
+        
 
     #- name: Import external feeds - passwall
     #  working-directory: ./openwrt
@@ -82,8 +84,6 @@ jobs:
         CONFIG_FILE: 'x86_64.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x ./customize.sh && ./customize.sh
-        cd openwrt && make defconfig
         
     - name: Download package
       working-directory: ./openwrt
